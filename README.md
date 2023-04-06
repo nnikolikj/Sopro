@@ -1,4 +1,4 @@
-FE test automation for Musala soft sandbox
+FE test automation for Sopro sandbox
 
 Tools used:
 
