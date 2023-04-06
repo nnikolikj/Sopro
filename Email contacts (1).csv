@@ -1,0 +1,8 @@
+Email,ToolsetScore,Mailbox Verification,Mail Send advice,Overal Risk score
+test4@test4.com,Low (0.1),Bad (NoMxServersFound),0.1 Do Not Send,6.75 Risky
+test3@test3.com,Low (0.1),Bad (NoMxServersFound),0.1 Do Not Send,6.75 Risky
+test2@test2.com,None (0),Bad (DomainIsInexistent),0 None,0 None
+test1@test1.com,None (0),Bad (DomainIsInexistent),0 None,0 None
+test,,,,
+@.,,,,
+Hello,,,,

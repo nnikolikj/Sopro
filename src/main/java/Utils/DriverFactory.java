@@ -1,10 +1,12 @@
 package Utils;
 
 import Enums.DriverTypeEnum;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import io.github.bonigarcia.wdm.managers.FirefoxDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
@@ -18,8 +20,10 @@ public class DriverFactory {
         WebDriver driver = null;
 
         if (driverType.equals(DriverTypeEnum.GOOGLE_CHROME_DRIVER)) {
-            ChromeDriverManager.getInstance().setup();
-            driver = new ChromeDriver();
+            ChromeOptions option = new ChromeOptions();
+            option.addArguments("--remote-allow-origins=*");
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver(option);
         }
         if(driverType.equals(DriverTypeEnum.FIRE_FOX_DRIVER)) {
             FirefoxDriverManager.getInstance().setup();

@@ -11,6 +11,8 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 @Getter
 public abstract class BasePage {
     private WebDriver driver;
@@ -23,7 +25,7 @@ public abstract class BasePage {
         this.driver = driver;
         this.factory = new AjaxElementLocatorFactory(driver, Configuration.MAX_RETRY_FOR_LOCATING_ELEMENT_AJAX_FACTORY);
         PageFactory.initElements(factory,this);
-        wait = new WebDriverWait(driver,Configuration.MAX_RETRY_FOR_LOCATING_ELEMENT);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         actions = new Actions(driver);
         javascriptExecutor = (JavascriptExecutor) driver;
     }
